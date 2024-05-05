@@ -1,11 +1,13 @@
-import employee_info
+import employee_info 
 
 def test_get_employees_by_age_range():
-    assert(employee_info.get_employees_by_age_range(0,24)==[{'age': 23, 'department': 'Marketing', 'name': 'Mary', 'salary': 56000}])
+    ans = [{'age': 23, 'department': 'Marketing', 'name': 'Mary', 'salary': 56000}]
+    assert(employee_info.get_employees_by_age_range(0,24)==ans)
 
 def test_calc_average_salary():
-    assert(employee_info.calculate_average_salary()==60166.67)
+    ans = 60166.67
+    assert(employee_info.calculate_average_salary()== ans)
 
 def test_get_employees_by_dept():
-    assert(employee_info.get_employees_by_dept("Sales")=={"name": "Peter", "age": 40, "department": "Sales", "salary": 60000},
-{"name": "John", "age": 30, "department": "Sales", "salary": 50000})
+    ans = [{"name": "John", "age": 30, "department": "Sales", "salary": 50000},{"name": "Peter", "age": 40, "department": "Sales", "salary": 60000}]
+    assert(employee_info.get_employees_by_dept("Sales") == ans)
