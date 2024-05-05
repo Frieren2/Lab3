@@ -15,24 +15,22 @@ def get_employees_by_age_range(age_lower_limit, age_upper_limit):
     for item in employee_data:
         if int(item["age"]) > int(age_lower_limit) and int(item["age"]) < int(age_upper_limit):
             result.append(item)
-
+            
     return result
 
 def calculate_average_salary():
     total = 0
     average = 0
-
-    #add your implementation to calculate here
-
-
-    return average
+    total = sum(employee["salary"]for employee in employee_data)
+    n = len(employee_data)
+    average= total/n
+    return round(average,2)
 
 def get_employees_by_dept(department):
     result = []
-
-    # Add your implementation from here
-
-
+    for n in employee_data: #to make for loop n is the variable 
+        if n["department"] == department: 
+            result.append(n)
     return result
 
 def display_all_records():
